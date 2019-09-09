@@ -1,6 +1,5 @@
 import './index.less';
-import logo from '../../assets/userLogo.jpeg';
-import BiaoChenXuYing from '../../assets/BiaoChenXuYing.png';
+import logo from '../../assets/test.png';
 import React, { Component } from 'react';
 import { Avatar, message } from 'antd';
 import { Link } from 'react-router-dom';
@@ -109,7 +108,7 @@ class SliderRight extends Component {
     return (
       <div className="right">
         <Avatar className="right-logo" src={logo} size={130} icon="user" />
-        <div className="title">BiaoChenXuYing</div>
+        <div className="title">yangyuanliang</div>
         <div className="right-content">
           {/* <div className="item">
 						<div className="num">123</div>粉丝<Icon type="right" theme="outlined" />
@@ -129,14 +128,14 @@ class SliderRight extends Component {
           <div className="title">标签云</div>
           {list}
         </div>
-        <div className="introduce">
+        {/*<div className="introduce">
           <div className="title">本站公众号</div>
           <div className="content">
             分享 WEB 全栈开发等相关的技术文章，热点资源<br />
             全栈程序员的成长之路
             <img style={{'width':'100%',marginTop: '20px'}} src={BiaoChenXuYing} alt="公众号" />
           </div>
-        </div>
+        </div>*/}
       </div>
     );
   }

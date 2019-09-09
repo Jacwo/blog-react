@@ -146,7 +146,9 @@ class Articles extends Component {
       .then(res => {
         let num = this.state.pageNum;
         if (res.status === 200 && res.data.code === 0) {
+          console.log(res.data.data);
           this.setState(preState => ({
+
             articlesList: [...preState.articlesList, ...res.data.data.list],
             total: res.data.data.count,
             pageNum: ++num,
@@ -168,6 +170,7 @@ class Articles extends Component {
 
   render() {
     const list = this.state.articlesList.map((item, i) => (
+
       <ReactCSSTransitionGroup
         key={item._id}
         transitionName="example"
@@ -194,25 +197,28 @@ class Articles extends Component {
             >
               {item.title}
             </Link>
-            <p className="abstract">{item.desc}</p>
+            <p className="abstract">{item.desc}222222</p>
             <div className="meta">
               <Link
                 rel="noopener noreferrer"
                 to={`/articleDetail?article_id=${item._id}`}
               >
                 <Icon type="eye" theme="outlined" /> {item.meta.views}
+
               </Link>{' '}
               <Link
                 target="_blank"
                 to={`/articleDetail?article_id=${item._id}`}
               >
                 <Icon type="message" theme="outlined" /> {item.meta.comments}
+
               </Link>{' '}
               <Link
                 target="_blank"
                 to={`/articleDetail?article_id=${item._id}`}
               >
                 <Icon type="heart" theme="outlined" /> {item.meta.likes}
+
               </Link>
               <span className="time">
                 {item.create_time

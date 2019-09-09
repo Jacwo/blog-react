@@ -108,7 +108,7 @@ class CommentList extends Component {
           user_id,
           comment_id: this.state.comment_id,
           content: this.state.content,
-          to_user: JSON.stringify(this.state.to_user),
+          to_user: this.state.to_user,
         },
         { withCredentials: true },
       )

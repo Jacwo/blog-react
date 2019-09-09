@@ -1,5 +1,5 @@
 import './index.less';
-import logo from '../../assets/userLogo.jpeg';
+import logo from '../../assets/test.png';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -1279,7 +1279,7 @@ class Index extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link"
-                href={`https://github.com/biaochenxuying`}
+                href={`https://github.com/Jacwo`}
               >
                 github
               </a>
@@ -1287,34 +1287,11 @@ class Index extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link"
-                href={`https://juejin.im/user/591d6b4d0ce463006926ae40`}
+                href={`https://blog.csdn.net/cccfire`}
               >
-                掘金
+                csdn
               </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-                href={`https://www.zhihu.com/people/gu-jian-qi-tan-shui/activities`}
-              >
-                知乎
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-                href={`https://segmentfault.com/u/biaochenxuying`}
-              >
-                segmentfault
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-                href={`https://www.jianshu.com/u/91717b553bfd`}
-              >
-                简书
-              </a>
+
             </div>
             {/* <div className="logion"> 加班到天明，学习到昏厥 ！！！ </div> */}
             <div className="introduce"> 时光正好，未来可期，加油 ！ </div>

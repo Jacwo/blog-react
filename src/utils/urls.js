@@ -1,17 +1,17 @@
 // url的链接
 export const urls = {
-  login: 'login',
-  logout: 'logout',
-  register: 'register',
-  getUser: 'getUser',
+  login: '/user/login',
+  logout: '/user/logout',
+  register: '/user/register',
+  getUser: '/user/getUser',
 
-  addComment: 'addComment',
-  addThirdComment: 'addThirdComment',
+  addComment: '/article/addComment',
+  addThirdComment: '/article/addThirdComment',
   getCommentList: 'getCommentList',
 
-  getArticleList: 'getArticleList',
-  likeArticle: 'likeArticle',
-  getArticleDetail: 'getArticleDetail',
+  getArticleList: '/article/getArticleList',
+  likeArticle: '/article/likeArticle',
+  getArticleDetail: '/article/getArticleDetail',
 
   addMessage: 'addMessage',
   getMessageList: 'getMessageList',
@@ -19,7 +19,7 @@ export const urls = {
 
   getLinkList: 'getLinkList',
 
-  getTagList: 'getTagList',
+  getTagList: '/tag/getTagList',
 
   getCategoryList: 'getCategoryList',
 

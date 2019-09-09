@@ -103,7 +103,7 @@ class Nav extends Component {
     } else if (name === '/articles') {
       key = '1';
       navTitle = '文章';
-    } else if (name === '/hot') {
+    } /*else if (name === '/hot') {
       key = '2';
       navTitle = '热门';
     } else if (name === '/timeLine') {
@@ -124,7 +124,7 @@ class Nav extends Component {
     } else if (name === '/archive') {
       key = '8';
       navTitle = '归档';
-    }
+    }*/
     this.setState({
       navTitle,
       menuCurrent: key,
@@ -316,7 +316,7 @@ class Nav extends Component {
                       文章
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="2">
+                  {/*<Menu.Item key="2">
                     <Link to="/hot">
                       <Icon type="fire" theme="outlined" />
                       热门
@@ -351,7 +351,7 @@ class Nav extends Component {
                       <Icon type="user" theme="outlined" />
                       关于
                     </Link>
-                  </Menu.Item>
+                  </Menu.Item>*/}
                 </Menu>
               </Col>
               <Col
