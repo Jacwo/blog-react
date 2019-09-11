@@ -12,7 +12,7 @@ export const urls = {
   getArticleList: '/article/getArticleList',
   likeArticle: '/article/likeArticle',
   getArticleDetail: '/article/getArticleDetail',
-
+  addArticle:'/article/addArticle',
   addMessage: 'addMessage',
   getMessageList: 'getMessageList',
   getMessageDetail: 'getMessageDetail',
@@ -21,7 +21,7 @@ export const urls = {
 
   getTagList: '/tag/getTagList',
 
-  getCategoryList: 'getCategoryList',
+  getCategoryList: '/category/getCategoryList',
 
   getTimeAxisList: 'getTimeAxisList',
   getTimeAxisDetail: 'getTimeAxisDetail',
