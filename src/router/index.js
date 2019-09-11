@@ -38,7 +38,7 @@ let config = [
     path: '/hot',
     exact: true,
     component: Loadable({
-      loader: () => import('../components/articles/articles.js'),
+      loader: () => import('../components/demo/ArticleCreate.js'),
       loading: loadingComponent,
       delay: 300,
     }),

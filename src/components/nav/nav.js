@@ -1,5 +1,5 @@
 import './index.less';
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/test.png';
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -103,10 +103,10 @@ class Nav extends Component {
     } else if (name === '/articles') {
       key = '1';
       navTitle = '文章';
-    } /*else if (name === '/hot') {
+    }else if (name === '/hot') {
       key = '2';
-      navTitle = '热门';
-    } else if (name === '/timeLine') {
+      navTitle = '写文章';
+    }/*  else if (name === '/timeLine') {
       key = '3';
       navTitle = '历程';
     } else if (name === '/message') {
@@ -316,13 +316,13 @@ class Nav extends Component {
                       文章
                     </Link>
                   </Menu.Item>
-                  {/*<Menu.Item key="2">
+                  <Menu.Item key="2">
                     <Link to="/hot">
                       <Icon type="fire" theme="outlined" />
-                      热门
+                      写文章
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="8">
+                  {/*<Menu.Item key="8">
                     <Link to="/archive">
                       <Icon type="project" theme="outlined" />
                       归档
