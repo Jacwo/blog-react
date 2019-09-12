@@ -106,10 +106,10 @@ class Nav extends Component {
     }else if (name === '/hot') {
       key = '2';
       navTitle = '写文章';
-    }/*  else if (name === '/timeLine') {
+    }  else if (name === '/timeLine') {
       key = '3';
       navTitle = '历程';
-    } else if (name === '/message') {
+    }/* else if (name === '/message') {
       key = '4';
       navTitle = '留言';
     } else if (name === '/about') {
@@ -322,6 +322,12 @@ class Nav extends Component {
                       写文章
                     </Link>
                   </Menu.Item>
+                  <Menu.Item key="3">
+                    <Link to="/timeLine">
+                      <Icon type="hourglass" theme="outlined" />
+                      历程
+                    </Link>
+                  </Menu.Item>
                   {/*<Menu.Item key="8">
                     <Link to="/archive">
                       <Icon type="project" theme="outlined" />
@@ -334,12 +340,7 @@ class Nav extends Component {
                       项目
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="3">
-                    <Link to="/timeLine">
-                      <Icon type="hourglass" theme="outlined" />
-                      历程
-                    </Link>
-                  </Menu.Item>
+
                   <Menu.Item key="4">
                     <Link to="/message">
                       <Icon type="message" theme="outlined" />
