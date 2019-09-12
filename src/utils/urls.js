@@ -23,7 +23,7 @@ export const urls = {
 
   getCategoryList: '/category/getCategoryList',
 
-  getTimeAxisList: 'getTimeAxisList',
+  getTimeAxisList: '/time/getTimeList',
   getTimeAxisDetail: 'getTimeAxisDetail',
 
   getProjectList: 'getProjectList',

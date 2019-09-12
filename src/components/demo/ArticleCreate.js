@@ -118,7 +118,7 @@ class ArticleCreate extends React.Component {
         https.post(
             urls.addArticle, params
         ).then(res => {
-                console.log('res :', res);
+                console.log('res :', res.data.data);
                 if (res.data.code === 0) {
                     notification.success({
                         message: res.data.data,

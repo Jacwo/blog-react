@@ -114,6 +114,8 @@ class Articles extends Component {
     window.onscroll = () => {
       if (getScrollTop() + getWindowHeight() > getDocumentHeight() - 100) {
         // 如果不是已经没有数据了，都可以继续滚动加载
+        console.log(this.state.isLoadEnd);
+        console.log(this.state.isLoading);
         if (this.state.isLoadEnd === false && this.state.isLoading === false) {
           this.handleSearch();
         }
@@ -127,8 +129,7 @@ class Articles extends Component {
     this.setState({
       isLoading: true,
     });
-    https
-      .get(
+    https.get(
         urls.getArticleList,
         {
           params: {
@@ -142,9 +143,9 @@ class Articles extends Component {
           },
         },
         { withCredentials: true },
-      )
-      .then(res => {
+      ).then(res => {
         let num = this.state.pageNum;
+        console.log(res);
         if (res.status === 200 && res.data.code === 0) {
           console.log(res.data.data);
           this.setState(preState => ({
@@ -154,6 +155,10 @@ class Articles extends Component {
             pageNum: ++num,
             isLoading: false,
           }));
+
+          console.log(this.state.articlesList);
+          console.log(this.state.total);
+          console.log(this.state.articlesList.length);
           if (this.state.total === this.state.articlesList.length) {
             this.setState({
               isLoadEnd: true,
@@ -197,7 +202,7 @@ class Articles extends Component {
             >
               {item.title}
             </Link>
-            <p className="abstract">{item.desc}222222</p>
+            <p className="abstract">{item.desc}</p>
             <div className="meta">
               <Link
                 rel="noopener noreferrer"

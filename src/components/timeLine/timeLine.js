@@ -92,11 +92,11 @@ class TimeLineCustom extends Component {
         <p>{item.content}</p>
         <p>
           <span>
-            {item.start_time ? timestampToTime(item.start_time, false) : ''}--
+            {item.startTime}--
           </span>
           <span>
             {' '}
-            {item.end_time ? timestampToTime(item.end_time, false) : ''}
+            {item.endTime ? timestampToTime(item.endTime, false) : ''}
           </span>
         </p>
       </Timeline.Item>
