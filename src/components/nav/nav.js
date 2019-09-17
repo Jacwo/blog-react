@@ -1,5 +1,5 @@
 import './index.less';
-import logo from '../../assets/test.png';
+import logo from '../../assets/test.jpg';
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -248,7 +248,7 @@ class Nav extends Component {
           >
             <Row className="container">
               <Col style={{ width: '25%', float: 'left', lineHeight: '64px' }}>
-                <a href="http://biaochenxuying.cn/main.html">
+                <a href="http://118.31.9.84:3001/main.html">
                   <div className="logo">
                     <img src={logo} alt="" />
                   </div>
@@ -306,25 +306,26 @@ class Nav extends Component {
                 >
                   <Menu.Item key="9">
                     <Link to="/">
-                      <Icon type="home" theme="outlined" />
                       首页
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="1">
                     <Link to="/articles">
-                      <Icon type="ordered-list" theme="outlined" />
                       文章
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="2">
-                    <Link to="/hot">
-                      <Icon type="fire" theme="outlined" />
-                      写文章
-                    </Link>
-                  </Menu.Item>
+                  {userInfo ? (
+                      <Menu.Item key="2" >
+                        <Link to="/hot">
+                          写文章
+                        </Link>
+                      </Menu.Item>
+                  ):(<Menu.Item key="2" onClick={this.showLoginModal} >
+                    登陆写文章
+                    </Menu.Item>)}
+
                   <Menu.Item key="3">
                     <Link to="/timeLine">
-                      <Icon type="hourglass" theme="outlined" />
                       历程
                     </Link>
                   </Menu.Item>
@@ -433,10 +434,10 @@ class Nav extends Component {
             </p>
             <p onClick={this.onClose}>
               <Link to="/hot">
-                <Icon type="fire" onClick={this.showLoginModal} /> 热门
+                <Icon type="fire" onClick={this.showLoginModal} /> 写文章
               </Link>
             </p>
-            <p onClick={this.onClose}>
+           {/* <p onClick={this.onClose}>
               <Link to="/archive">
                 <Icon type="project" onClick={this.showLoginModal} /> 归档
               </Link>
@@ -445,13 +446,13 @@ class Nav extends Component {
               <Link to="/project">
                 <Icon type="project" onClick={this.showLoginModal} /> 项目
               </Link>
-            </p>
+            </p>*/}
             <p onClick={this.onClose}>
               <Link to="/timeLine">
                 <Icon type="hourglass" onClick={this.showLoginModal} /> 历程
               </Link>
             </p>
-            <p onClick={this.onClose}>
+           {/* <p onClick={this.onClose}>
               <Link to="/message">
                 <Icon type="message" onClick={this.showLoginModal} /> 留言
               </Link>
@@ -460,7 +461,7 @@ class Nav extends Component {
               <Link to="/about">
                 <Icon type="user" onClick={this.showLoginModal} /> 关于
               </Link>
-            </p>
+            </p>*/}
 
             {userInfo ? (
               <div onClick={this.handleLogout}>

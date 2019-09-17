@@ -1,5 +1,5 @@
 import './index.less';
-import logo from '../../assets/test.png';
+import logo from '../../assets/test.jpg';
 import React, { Component } from 'react';
 import { Avatar, message } from 'antd';
 import { Link } from 'react-router-dom';
@@ -108,7 +108,7 @@ class SliderRight extends Component {
     return (
       <div className="right">
         <Avatar className="right-logo" src={logo} size={130} icon="user" />
-        <div className="title">yangyuanliang</div>
+        <div className="title">杨园亮</div>
         <div className="right-content">
           {/* <div className="item">
 						<div className="num">123</div>粉丝<Icon type="right" theme="outlined" />
@@ -125,7 +125,7 @@ class SliderRight extends Component {
           {/* <div className="footer">{linkChildren}</div> */}
         </div>
         <div className="tags">
-          <div className="title">标签云</div>
+          <div className="title">技能标签</div>
           {list}
         </div>
         {/*<div className="introduce">
