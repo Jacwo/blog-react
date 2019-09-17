@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Select, Button, notification, message} from 'antd';
+import {Input, Select, Button, notification} from 'antd';
 import SimpleMDE from 'simplemde';
 import marked from 'marked';
 import highlight from 'highlight.js';
@@ -7,7 +7,6 @@ import 'simplemde/dist/simplemde.min.css';
 import './style.less';
 import https from "../../utils/https";
 import urls from "../../utils/urls";
-import markdown from "../../utils/markdown";
 
 
 class ArticleCreate extends React.Component {
@@ -21,7 +20,7 @@ class ArticleCreate extends React.Component {
             pageSize: 50,
             changeType: false,
             title: '',
-            author: 'yangyuanliang',
+            author: '杨园亮',
             keyword: '',
             content: '',
             desc: '',
@@ -74,7 +73,6 @@ class ArticleCreate extends React.Component {
     }
 
     handleSubmit() {
-        const articleDetail = this.props.article;
         if (!this.state.title) {
             notification.error({
                 message: "文章标题不能为空",
@@ -127,6 +125,7 @@ class ArticleCreate extends React.Component {
                         loading: false,
                         chnageType: false,
                     });
+                    this.handleSearch(this.state.pageNum, this.state.pageSize);
                 } else {
                     notification.error({
                         message: res.message,
@@ -136,30 +135,6 @@ class ArticleCreate extends React.Component {
             .catch(err => {
                 console.log(err);
             });
-        /*new Promise(resolve => {
-            dispatch({
-                type: 'article/addArticle',
-                payload: {
-                    resolve,
-                    params,
-                },
-            });
-        }).then(res => {
-            if (res.code === 0) {
-                notification.success({
-                    message: res.message,
-                });
-                this.setState({
-                    loading: false,
-                    chnageType: false,
-                });
-                // this.handleSearch(this.state.pageNum, this.state.pageSize);
-            } else {
-                notification.error({
-                    message: res.message,
-                });
-            }
-        });*/
 
     }
 
@@ -183,7 +158,7 @@ class ArticleCreate extends React.Component {
         console.log('tags :', tags);
         this.setState({
             tagsDefault: value,
-            tags,
+            tags:value,
         });
     }
 
@@ -192,7 +167,7 @@ class ArticleCreate extends React.Component {
         console.log('category :', category);
         this.setState({
             categoryDefault: value,
-            category,
+            category:value,
         });
     }
 

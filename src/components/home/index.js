@@ -1,5 +1,5 @@
 import './index.less';
-import logo from '../../assets/test.png';
+import logo from '../../assets/test.jpg';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -1264,7 +1264,7 @@ class Index extends Component {
         <div className="content">
           <div className="home-header">
             <Link className="link" to={`/home`}>
-              <img className="home-logo" src={logo} alt="biaochenxuying logo" />
+              <img className="home-logo" src={logo} alt="yangyuanliang logo" />
             </Link>
           </div>
           <div className="home-body">
@@ -1272,9 +1272,9 @@ class Index extends Component {
               <Link className="link" to={`/articles`}>
                 文章
               </Link>
-              <Link className="link" to={`/project`}>
+             {/* <Link className="link" to={`/project`}>
                 项目
-              </Link>
+              </Link>*/}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1293,8 +1293,7 @@ class Index extends Component {
               </a>
 
             </div>
-            {/* <div className="logion"> 加班到天明，学习到昏厥 ！！！ </div> */}
-            <div className="introduce"> 时光正好，未来可期，加油 ！ </div>
+            <div className="introduce"> 有人爱，有事做，有所期待 ！ </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import './index.less';
 import './marked.css';
-import logo from '../../assets/test.png';
+import logo from '../../assets/test.jpg';
 import React, { Component } from 'react';
 import Comment from '../comments/comment';
 import CommentList from '../comments/list';
@@ -27,7 +27,7 @@ class Articles extends Component {
       type: 1, //文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
       articleDetail: {
         _id: '',
-        author: 'yangyuanliang',
+        author: '杨园亮',
         category: [],
         comments: [],
         create_time: '',
@@ -201,10 +201,10 @@ class Articles extends Component {
   }
 
   componentWillUnmount() {
-    document.title = 'yangyuanliang 的博客网站';
+    document.title = '杨园亮的博客网站';
     document
       .getElementById('keywords')
-      .setAttribute('content', 'yangyuanliang 的博客网站');
+      .setAttribute('content', '杨园亮的博客网站');
     document
       .getElementById('description')
       .setAttribute(

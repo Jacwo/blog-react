@@ -54,7 +54,7 @@ class Layouts extends Component {
               </Content>
             </Layout>
             <Footer style={{ textAlign: 'center', background: '#fff' }}>
-              JAVA学习 ©2019 Created by yangyuanliang
+              JAVA学习 ©2019 Created by 杨园亮
             </Footer>
             <BackTop />
           </div>

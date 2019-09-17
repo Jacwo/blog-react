@@ -41,7 +41,7 @@ class Login extends Component {
             avatar: res.data.data.avatar,
           };
           window.sessionStorage.userInfo = JSON.stringify(userInfo);
-          message.success(res.data.message, 1);
+          message.success("登陆成功", 1);
           this.props.handleCancel();
           this.setState({
             email: '',
