@@ -289,7 +289,7 @@ class Nav extends Component {
           >
             <Row className="container">
               <Col style={{ width: '120px', float: 'left' }}>
-                <a href="http://biaochenxuying.cn/main.html">
+                <a href="http://118.31.9.84:3001/main.html">
                   <div className="logo ">
                     <img src={logo} alt="" />
                   </div>
@@ -393,7 +393,6 @@ class Nav extends Component {
                   <div>
                     <Button
                       type="primary"
-                      icon="login"
                       style={{ marginRight: '15px' }}
                       onClick={this.showLoginModal}
                     >
@@ -401,12 +400,12 @@ class Nav extends Component {
                     </Button>
                     <Button
                       type="danger"
-                      icon="logout"
                       style={{ marginRight: '15px' }}
                       onClick={this.showRegisterModal}
                     >
                       注 册
                     </Button>
+
                   </div>
                 )}
               </Col>
@@ -424,17 +423,17 @@ class Nav extends Component {
           <div className="drawer">
             <p onClick={this.onClose}>
               <Link to="/">
-                <Icon type="home" /> 首页
+                 首页
               </Link>
             </p>
             <p onClick={this.onClose}>
               <Link to="/articles">
-                <Icon type="ordered-list" /> 文章
+                 文章
               </Link>
             </p>
             <p onClick={this.onClose}>
               <Link to="/hot">
-                <Icon type="fire" onClick={this.showLoginModal} /> 写文章
+                写文章
               </Link>
             </p>
            {/* <p onClick={this.onClose}>
@@ -449,7 +448,7 @@ class Nav extends Component {
             </p>*/}
             <p onClick={this.onClose}>
               <Link to="/timeLine">
-                <Icon type="hourglass" onClick={this.showLoginModal} /> 历程
+                 历程
               </Link>
             </p>
            {/* <p onClick={this.onClose}>
@@ -467,17 +466,18 @@ class Nav extends Component {
               <div onClick={this.handleLogout}>
                 <p>{userInfo.name}</p>
                 <p>
-                  <Icon type="logout" /> 退出{' '}
+                  退出{' '}
                 </p>
               </div>
             ) : (
               <div>
                 <p onClick={this.showLoginModal}>
-                  <Icon type="login" /> 登录
+                   登录
                 </p>
                 <p onClick={this.showRegisterModal}>
-                  <Icon type="logout" /> 注册{' '}
+                   注册{' '}
                 </p>
+
               </div>
             )}
           </div>

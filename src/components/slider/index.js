@@ -15,6 +15,7 @@ class SliderRight extends Component {
       type: 2, //1 :其他友情链接 2: 是管理员的个人链接 ,‘’ 代表所有链接
       pageNum: 1,
       pageSize: 50,
+      total:0,
       list: [],
       linkList: [],
     };
@@ -64,6 +65,7 @@ class SliderRight extends Component {
         if (res.status === 200 && res.data.code === 0) {
           this.setState({
             list: res.data.data.list,
+            total:res.data.data.count,
           });
         } else {
           message.error(res.data.message);
@@ -89,6 +91,8 @@ class SliderRight extends Component {
         <span key={item._id}>{item.name}</span>
       </Link>
     ));
+
+    const total=this.state.total;
     // const linkChildren = this.state.linkList.map(item => (
     //   <a
     //     key={item._id}
@@ -110,6 +114,7 @@ class SliderRight extends Component {
         <Avatar className="right-logo" src={logo} size={130} icon="user" />
         <div className="title">杨园亮</div>
         <div className="right-content">
+            <div className="item">您是本站第{total}位访客</div>
           {/* <div className="item">
 						<div className="num">123</div>粉丝<Icon type="right" theme="outlined" />
 					</div>
@@ -124,13 +129,13 @@ class SliderRight extends Component {
           </div> */}
           {/* <div className="footer">{linkChildren}</div> */}
         </div>
+
+
         <div className="tags">
           <div className="title">技能标签</div>
           {list}
         </div>
-        {/*<div className="introduce">
-          <div className="title">本站公众号</div>
-          <div className="content">
+          {/* <div className="content">
             分享 WEB 全栈开发等相关的技术文章，热点资源<br />
             全栈程序员的成长之路
             <img style={{'width':'100%',marginTop: '20px'}} src={BiaoChenXuYing} alt="公众号" />

@@ -309,7 +309,6 @@ class Articles extends Component {
             <Button
               type="danger"
               size="large"
-              icon="heart"
               loading={this.state.isLoading}
               onClick={this.likeArticle}
             >
