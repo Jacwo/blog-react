@@ -320,9 +320,7 @@ class Nav extends Component {
                           写文章
                         </Link>
                       </Menu.Item>
-                  ):(<Menu.Item key="2" onClick={this.showLoginModal} >
-                    登陆写文章
-                    </Menu.Item>)}
+                  ):("")}
 
                   <Menu.Item key="3">
                     <Link to="/timeLine">
