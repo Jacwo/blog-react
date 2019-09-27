@@ -8,12 +8,12 @@ export const urls = {
   addComment: '/article/addComment',
   addThirdComment: '/article/addThirdComment',
   getCommentList: 'getCommentList',
-
+  getMoneyList: '/message/getMoneyList',
   getArticleList: '/article/getArticleList',
   likeArticle: '/article/likeArticle',
   getArticleDetail: '/article/getArticleDetail',
   addArticle:'/article/addArticle',
-  addMessage: 'addMessage',
+  addMessage: '/message/addMessage',
   getMessageList: 'getMessageList',
   getMessageDetail: 'getMessageDetail',
 

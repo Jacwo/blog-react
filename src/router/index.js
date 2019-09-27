@@ -74,6 +74,16 @@ let config = [
     }),
   },
   {
+    name: 'money',
+    path: '/money',
+    exact: true,
+    component: Loadable({
+      loader: () => import('../components/money/money.js'),
+      loading: loadingComponent,
+      delay: 300,
+    }),
+  },
+  {
     name: 'about',
     path: '/about',
     exact: true,
