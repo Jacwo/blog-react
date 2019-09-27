@@ -109,10 +109,14 @@ class Nav extends Component {
     }  else if (name === '/timeLine') {
       key = '3';
       navTitle = '历程';
-    }/* else if (name === '/message') {
+    } else if (name === '/message') {
       key = '4';
       navTitle = '留言';
-    } else if (name === '/about') {
+    }else if (name === '/money') {
+      key = '5';
+      navTitle = '打赏';
+    }
+    /*else if (name === '/about') {
       key = '5';
       navTitle = '关于我';
     } else if (name === '/articleDetail') {
@@ -327,6 +331,16 @@ class Nav extends Component {
                       历程
                     </Link>
                   </Menu.Item>
+                  <Menu.Item key="4">
+                    <Link to="/message">
+                      留言
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item key="5">
+                    <Link to="/money">
+                      打赏
+                    </Link>
+                  </Menu.Item>
                   {/*<Menu.Item key="8">
                     <Link to="/archive">
                       <Icon type="project" theme="outlined" />
@@ -449,16 +463,16 @@ class Nav extends Component {
                  历程
               </Link>
             </p>
-           {/* <p onClick={this.onClose}>
+            <p onClick={this.onClose}>
               <Link to="/message">
                 <Icon type="message" onClick={this.showLoginModal} /> 留言
               </Link>
             </p>
             <p onClick={this.onClose}>
-              <Link to="/about">
-                <Icon type="user" onClick={this.showLoginModal} /> 关于
+              <Link to="/money">
+                <Icon type="user" onClick={this.showLoginModal} /> 打赏
               </Link>
-            </p>*/}
+            </p>
 
             {userInfo ? (
               <div onClick={this.handleLogout}>
