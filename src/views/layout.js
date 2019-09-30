@@ -14,7 +14,64 @@ class Layouts extends Component {
     this.state = {
       // isShowSlider: false,
       // isIndexPage: false,
+      date: new Date(),
+      date2:new Date(),
+      diff2:0,
     };
+  }
+  componentDidMount() {
+    this.timerID = setInterval(
+        () => this.tick(),
+        1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      //date: new Date(),
+      date2:new Date(),
+
+      diff2:this.networkTime(this.state.date),
+
+
+      //date3:this.state.date2.valueOf()-this.state.date.valueOf()
+
+    });
+  }
+   networkTime(time) {
+    var netConnectTime = parseInt(Date.parse(time)/1000);//网络连接时间
+    var currentTime = parseInt(new Date().getTime()/1000);//当前时间
+    var hasUseTime = parseInt(currentTime - netConnectTime);
+    var returnObj = {};
+    // 1 时 = 3600秒 1分 = 60秒
+    if (hasUseTime  < 60) {
+      if (hasUseTime < 0) {
+        returnObj = "时间"+"0秒";
+      }else{
+        returnObj = "时间"+parseInt(hasUseTime)+"秒";
+      }
+      return returnObj;
+
+    }else if (hasUseTime >= 60 &&  hasUseTime <= 3600) {
+      returnObj = "时间"+parseInt(hasUseTime/60)+"分钟";
+      return returnObj;
+    }else if (hasUseTime > 3600 && hasUseTime <= 3600*24) {
+      var h = parseInt(hasUseTime/3600);
+      var min = parseInt((hasUseTime - h*3600)/60);
+      returnObj ="时间"+h+"小时"+min + "分钟"
+      return returnObj;
+
+    }else if (hasUseTime > 3600*24 ){
+      var day = parseInt( hasUseTime/ (24*3600) );
+      var hour = parseInt( (hasUseTime - day*24*3600) / 3600);
+      var minute = parseInt( (hasUseTime - day*24*3600 - hour*3600) /60 );
+      returnObj = "时间"+day+ "天"+hour+"小时"+minute+'分钟';
+      return returnObj;
+    }
   }
 
   render() {
@@ -54,7 +111,7 @@ class Layouts extends Component {
               </Content>
             </Layout>
             <Footer style={{ textAlign: 'center', background: '#fff' }}>
-              JAVA学习 ©2019 Created by 杨园亮
+              JAVA学习 ©2019 Created by 杨园亮 网站稳定运行{this.state.diff2}
             </Footer>
             <BackTop />
           </div>

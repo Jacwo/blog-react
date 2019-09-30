@@ -118,14 +118,7 @@ class Articles extends Component {
       message.error('该文章不存在！', 1);
       return;
     }
-    let user_id = '';
-    if (window.sessionStorage.userInfo) {
-      let userInfo = JSON.parse(window.sessionStorage.userInfo);
-      user_id = userInfo._id;
-    } else {
-      message.warning('登录才能点赞，请先登录！', 1);
-      return;
-    }
+
     this.setState({
       isLoading: true,
     });
@@ -133,8 +126,7 @@ class Articles extends Component {
       .post(
         urls.likeArticle,
         {
-          id: this.state.articleDetail._id,
-          user_id,
+          id: this.state.articleDetail._id
         },
         { withCredentials: true },
       )
