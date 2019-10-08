@@ -14,7 +14,7 @@ class Layouts extends Component {
     this.state = {
       // isShowSlider: false,
       // isIndexPage: false,
-      date: new Date(),
+      date: new Date("2019/09/01"),
       date2:new Date(),
       diff2:0,
     };
@@ -111,7 +111,7 @@ class Layouts extends Component {
               </Content>
             </Layout>
             <Footer style={{ textAlign: 'center', background: '#fff' }}>
-              JAVA学习 ©2019 Created by 杨园亮 网站稳定运行{this.state.diff2}
+              服务端学习 ©2019 created by 杨园亮 网站稳定运行{this.state.diff2}
             </Footer>
             <BackTop />
           </div>
