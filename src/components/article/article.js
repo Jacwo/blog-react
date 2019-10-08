@@ -21,6 +21,7 @@ class Articles extends Component {
     this.state = {
       isMobile: isMobileOrPc(),
       isLoading: false,
+      isEnabled:true,
       isSubmitLoading: false,
       list: [],
       content: '',
@@ -135,12 +136,13 @@ class Articles extends Component {
           let articleDetail = this.state.articleDetail;
           ++articleDetail.meta.likes;
           this.setState({
+            isEnabled:false,
             isLoading: false,
             articleDetail,
           });
-          message.success(res.data.message, 1);
+          message.success("点赞成功", 1);
         } else {
-          message.error(res.data.message, 1);
+          message.error(res.data.data, 1);
         }
       })
       .catch(err => {
@@ -201,7 +203,7 @@ class Articles extends Component {
       .getElementById('description')
       .setAttribute(
         'content',
-        'JAVA后台开发',
+        '服务端开发',
       );
   }
 
@@ -285,7 +287,6 @@ class Articles extends Component {
           </div>
 
           {this.state.isLoading ? <LoadingCom /> : ''}
-
           <div className="content">
             <div
               id="content"
@@ -297,16 +298,26 @@ class Articles extends Component {
               }}
             />
           </div>
-          <div className="heart">
+          {this.state.isEnabled ? (<div className="heart">
+
             <Button
-              type="danger"
-              size="large"
-              loading={this.state.isLoading}
-              onClick={this.likeArticle}
+                type="danger"
+                size="large"
+                loading={this.state.isLoading}
+                onClick={this.likeArticle}
             >
               点赞
             </Button>
-          </div>
+          </div>) : (<div className="heart">
+
+            <Button
+                loading={this.state.isLoading}
+            >
+              已点赞
+            </Button>
+          </div>)}
+
+
           <Comment
             content={this.state.content}
             isSubmitLoading={this.state.isSubmitLoading}
