@@ -1,9 +1,8 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-
 const loadingComponent = ({ error, pastDelay }) => {
   if (error) {
-    return <div>Error!</div>;
+    return <div>Error22222222!</div>;
   } else if (pastDelay) {
     // return <div>Loading...</div>;
     return <div />;
@@ -79,6 +78,15 @@ let config = [
     exact: true,
     component: Loadable({
       loader: () => import('../components/money/money.js'),
+      loading: loadingComponent,
+      delay: 300,
+    }),
+  },{
+    name: 'map',
+    path: '/map',
+    exact: true,
+    component: Loadable({
+      loader: () => import('../components/map/map.js'),
       loading: loadingComponent,
       delay: 300,
     }),
