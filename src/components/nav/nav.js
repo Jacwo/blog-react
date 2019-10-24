@@ -115,6 +115,12 @@ class Nav extends Component {
     }else if (name === '/money') {
       key = '5';
       navTitle = '打赏';
+    }else if (name === '/project') {
+      key = '7';
+      navTitle = '项目';
+    }else if (name === '/map') {
+      key = '10';
+      navTitle = '地图';
     }
     /*else if (name === '/about') {
       key = '5';
@@ -318,6 +324,12 @@ class Nav extends Component {
                       文章
                     </Link>
                   </Menu.Item>
+                  <Menu.Item key="7">
+                    <Link to="/project">
+
+                      项目
+                    </Link>
+                  </Menu.Item>
                   {userInfo ? (
                       <Menu.Item key="2" >
                         <Link to="/hot">
@@ -329,6 +341,11 @@ class Nav extends Component {
                   <Menu.Item key="3">
                     <Link to="/timeLine">
                       历程
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item key="10">
+                    <Link to="/map">
+                      地图
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="4">
@@ -347,12 +364,7 @@ class Nav extends Component {
                       归档
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="7">
-                    <Link to="/project">
-                      <Icon type="database" theme="outlined" />
-                      项目
-                    </Link>
-                  </Menu.Item>
+
 
                   <Menu.Item key="4">
                     <Link to="/message">
@@ -446,6 +458,11 @@ class Nav extends Component {
             <p onClick={this.onClose}>
               <Link to="/hot">
                 写文章
+              </Link>
+            </p>
+            <p onClick={this.onClose}>
+              <Link to="/map">
+                访客遍布
               </Link>
             </p>
            {/* <p onClick={this.onClose}>
