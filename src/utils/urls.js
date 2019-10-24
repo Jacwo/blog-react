@@ -16,7 +16,7 @@ export const urls = {
   addMessage: '/message/addMessage',
   getMessageList: 'getMessageList',
   getMessageDetail: 'getMessageDetail',
-
+  getmapList:"/map/getMapList",
   getLinkList: 'getLinkList',
 
   getTagList: '/tag/getTagList',
@@ -26,8 +26,8 @@ export const urls = {
   getTimeAxisList: '/time/getTimeList',
   getTimeAxisDetail: 'getTimeAxisDetail',
 
-  getProjectList: 'getProjectList',
-  getProjectDetail: 'getProjectDetail',
+  getProjectList: '/project/getProjectList',
+  getProjectDetail: '/project/getProjectDetail',
 };
 
 export default urls;
