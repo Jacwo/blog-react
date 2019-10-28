@@ -16,6 +16,7 @@ import {
   getWindowHeight,
   getQueryStringByName,
   timestampToTime,
+  formatDate,
 } from '../../utils/utils';
 /*actions*/
 import { saveArticlesList } from '../../store/actions/articles';
@@ -226,9 +227,7 @@ class Articles extends Component {
 
               </Link>
               <span className="time">
-                {item.create_time
-                  ? timestampToTime(item.create_time, true)
-                  : ''}
+                { formatDate(item.create_time)}
               </span>
             </div>
           </div>

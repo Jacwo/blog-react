@@ -1,7 +1,7 @@
 import './index.less';
 import logo from '../../assets/test.jpg';
 import React, { Component } from 'react';
-import { Avatar, message } from 'antd';
+import { Avatar, message,Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import https from '../../utils/https';
 import urls from '../../utils/urls';
@@ -16,6 +16,8 @@ class SliderRight extends Component {
       pageNum: 1,
       pageSize: 50,
       total:0,
+      totalArticle:0,
+      totalLikes:0,
       list: [],
       linkList: [],
     };
@@ -66,6 +68,10 @@ class SliderRight extends Component {
           this.setState({
             list: res.data.data.list,
             total:res.data.data.count,
+            totalArticle:res.data.data.totalArticle,
+            totalLikes:res.data.data.totalLikes,
+
+
           });
         } else {
           message.error(res.data.message);
@@ -93,6 +99,8 @@ class SliderRight extends Component {
     ));
 
     const total=this.state.total;
+    const totalArticle=this.state.totalArticle;
+    const totalLikes=this.state.totalLikes;
     // const linkChildren = this.state.linkList.map(item => (
     //   <a
     //     key={item._id}
@@ -114,19 +122,17 @@ class SliderRight extends Component {
         <Avatar className="right-logo" src={logo} size={130} icon="user" />
         <div className="title">杨园亮</div>
         <div className="right-content">
-            <div className="item">您是本站第{total}位访客</div>
-          {/* <div className="item">
-						<div className="num">123</div>粉丝<Icon type="right" theme="outlined" />
-					</div>
+                  <div className="item">
+                    <div className="num">{total}</div>访客总数
+                  </div>
+
 					<div className="item">
-						<div className="num">123</div>文章<Icon type="right" theme="outlined" />
+						<div className="num">{totalArticle}</div>文章
 					</div>
+
 					<div className="item">
-						<div className="num">123</div>字数<Icon type="right" theme="outlined" />
-					</div>
-					<div className="item">
-						<div className="num">123</div>收获喜欢<Icon type="right" theme="outlined" />
-          </div> */}
+						<div className="num">{totalLikes}</div>收获喜欢
+          </div>
           {/* <div className="footer">{linkChildren}</div> */}
         </div>
 
