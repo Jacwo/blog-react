@@ -14,6 +14,7 @@ import {
   timestampToTime,
   isMobileOrPc,
 } from '../../utils/utils';
+import {Link} from "react-router-dom";
 
 class Articles extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class Articles extends Component {
         origin: 0,
         state: 1,
         tags: [],
+        articles:[],
         title: '',
         update_time: '',
       },
@@ -232,11 +234,29 @@ class Articles extends Component {
         {item.name}
       </span>
     ));
-
+    const list2 = this.state.articleDetail.articles.map((item, i) => (
+        <span key={item.id} className="tags2">
+          <Link
+              target="_blank"
+              to={`/articleDetail?article_id=${item._id}`}
+          >
+            {item.title}</Link>
+      </span>
+    ));
     return (
+
       <div className="article clearfix">
+
         <div className="detail fl" style={{ width: width }}>
+            <div className="recommend">推荐阅读
+              <div className="tags2 " title="标签">
+
+                {list2}
+              </div>
+            </div>
+
           <div className="header">
+
             <div className="title">{this.state.articleDetail.title}</div>
             <div className="author">
               <div className="avatar">
@@ -282,12 +302,15 @@ class Articles extends Component {
                 <Icon type="tags" theme="outlined" />
                 {list}
               </div>
+
               <span className="clearfix" />
             </div>
+
           </div>
 
           {this.state.isLoading ? <LoadingCom /> : ''}
           <div className="content">
+
             <div
               id="content"
               className="article-detail"
@@ -331,7 +354,7 @@ class Articles extends Component {
             refreshArticle={this.refreshArticle}
           />
         </div>
-        {!this.state.isMobile ? (
+        {/*{!this.state.isMobile ? (
           <div
             style={{ width: '23%' }}
             className="article-right fr anchor"
@@ -343,8 +366,10 @@ class Articles extends Component {
           />
         ) : (
           ''
-        )}
+        )}*/}
+
       </div>
+
     );
   }
 }
