@@ -126,7 +126,7 @@ function formatTen(num) {
 }
 export function formatDate(date) {
   console.log(date);
-  var dateNew = date.replace(/-/g, "/").replace("T"," PM");
+  var dateNew = date.replace(/-/g, "/").replace("T"," ");
   var dateNew2=dateNew.substring(0,dateNew.lastIndexOf("."));
 
   console.log(dateNew2);
