@@ -111,7 +111,9 @@ class Layouts extends Component {
               </Content>
             </Layout>
             <Footer style={{ textAlign: 'center', background: '#fff' }}>
-              服务端学习 ©2019 created by 杨园亮 网站稳定运行{this.state.diff2}
+
+                网站稳定运行{this.state.diff2}<br/>
+              <a className="link" href="http://www.beian.gov.cn/portal/registerSystemInfo">豫ICP备19039052号</a> 服务端学习 ©2019 created by 杨园亮
             </Footer>
             <BackTop />
           </div>
