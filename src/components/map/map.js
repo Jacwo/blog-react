@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import echarts from "echarts";
 import {mapJson,geoCoordMap} from './chinaJSON.js';
 import https from "../../utils/https";
+import LoadingCom from '../loading/loading';
 import urls from "../../utils/urls";
 
 const convertData = (data) => {
@@ -22,8 +23,7 @@ class LayoutImg extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true,
-            loaded:false,
+            isLoading: false,
             vmData:[
                 {name: '长春', value: 125.35,num:43.88}/*,
 
@@ -58,7 +58,7 @@ class LayoutImg extends Component {
             })
             .catch(err => {
                 this.setState({
-                    isLoading: false,
+                    isLoading: true,
                 });
                 console.error(err);
             });
@@ -176,6 +176,7 @@ class LayoutImg extends Component {
     render() {
         return (
             <div className="cloudhost-box">
+                {this.state.isLoading ? <LoadingCom /> : ''}
                 <div ref="map" style={{width: '1100px',height: '550px',mergeLeft:"0px"}} />
             </div>
 
