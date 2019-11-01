@@ -2,7 +2,7 @@ import './index.less';
 import React, { Component } from 'react';
 import {  message } from 'antd';
 import chat from '../../assets/chat.png';
-
+import LoadingCom from '../loading/loading';
 import https from '../../utils/https';
 import urls from '../../utils/urls';
 import ReactTabllist from 'react-tabllist';
@@ -124,7 +124,8 @@ class TimeLineCustom extends Component {
   render() {
     return (
       <div className="money">
-       <img src={chat} alt="微信"/>微信
+        {this.state.isLoading ? <LoadingCom /> : ''}
+        <img src={chat} alt="微信"/>微信
         <ReactTabllist {...this.state}/>
       </div>
 

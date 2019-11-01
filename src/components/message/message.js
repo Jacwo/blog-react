@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Input, Button, Icon, message } from 'antd';
 import https from '../../utils/https';
 import urls from '../../utils/urls';
+import LoadingCom from '../loading/loading';
 
 class TimeLineCustom extends Component {
   constructor(props) {
@@ -84,7 +85,10 @@ class TimeLineCustom extends Component {
   render() {
     return (
       <div className="message">
+
         <div className="">
+          {this.state.isLoading ? <LoadingCom /> : ''}
+
           <Input
             style={{ marginBottom: 40 }}
             prefix={<Icon type="safety" style={{ color: 'rgba(0,0,0,.25)' }} />}
