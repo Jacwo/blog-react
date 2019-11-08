@@ -455,14 +455,19 @@ class Nav extends Component {
                  文章
               </Link>
             </p>
-            <p onClick={this.onClose}>
-              <Link to="/hot">
-                写文章
-              </Link>
-            </p>
+
+              {userInfo ?
+                  <p onClick={this.onClose}>
+                  <Link to="/hot">
+                    写文章
+                  </Link>
+                  </p>
+                  :""
+              }
+
             <p onClick={this.onClose}>
               <Link to="/map">
-                访客遍布
+                地图
               </Link>
             </p>
            {/* <p onClick={this.onClose}>
@@ -482,12 +487,12 @@ class Nav extends Component {
             </p>
             <p onClick={this.onClose}>
               <Link to="/message">
-                <Icon type="message" onClick={this.showLoginModal} /> 留言
+               留言
               </Link>
             </p>
             <p onClick={this.onClose}>
               <Link to="/money">
-                <Icon type="user" onClick={this.showLoginModal} /> 打赏
+                 打赏
               </Link>
             </p>
 
