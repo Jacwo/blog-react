@@ -91,7 +91,7 @@ class TimeLineCustom extends Component {
 
           <Input
             style={{ marginBottom: 40 }}
-            prefix={<Icon type="safety" style={{ color: 'rgba(0,0,0,.25)' }} />}
+            prefix={<Icon type="safety" style={{ color: 'rgba(0,0,0,.25)', width:'90%' }} />}
             name="email"
             placeholder="邮箱（不能为空）"
             value={this.state.email}
@@ -127,7 +127,7 @@ class TimeLineCustom extends Component {
         <div className="submit">
           <Button
             loading={this.state.isLoading}
-            style={{ width: '100%' }}
+            style={{ width: '50%','margin-left':'25%',fontWeight:'bold' }}
             type="primary"
             onClick={this.handleOk}
           >
