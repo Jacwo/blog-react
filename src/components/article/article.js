@@ -237,6 +237,7 @@ class Articles extends Component {
     const list2 = this.state.articleDetail.articles.map((item, i) => (
         <span key={item.id} className="tags2">
           <Link
+              className="recommendList"
               target="_blank"
               to={`/articleDetail?article_id=${item._id}`}
           >
@@ -250,7 +251,6 @@ class Articles extends Component {
         <div className="detail fl" style={{ width: width }}>
             <div className="recommend">推荐阅读
               <div className="tags2 " title="标签">
-
                 {list2}
               </div>
             </div>
