@@ -50,26 +50,26 @@ class ArticleCreate extends React.Component {
         this.handleSearchTag();
         this.handleSearchCategory();
 
-        this.state.smde = new SimpleMDE({
-            element: document.getElementById('editor').childElementCount,
-            autofocus: true,
-            autosave: true,
-            previewRender(plainText) {
-                return marked(plainText, {
-                    renderer: new marked.Renderer(),
-                    gfm: true,
-                    pedantic: false,
-                    sanitize: false,
-                    tables: true,
-                    breaks: true,
-                    smartLists: true,
-                    smartypants: true,
-                    highlight(code) {
-                        return highlight.highlightAuto(code).value;
-                    },
-                });
-            },
-        });
+        this.setState({smde:new SimpleMDE({
+                element: document.getElementById('editor').childElementCount,
+                autofocus: true,
+                autosave: true,
+                previewRender(plainText) {
+                    return marked(plainText, {
+                        renderer: new marked.Renderer(),
+                        gfm: true,
+                        pedantic: false,
+                        sanitize: false,
+                        tables: true,
+                        breaks: true,
+                        smartLists: true,
+                        smartypants: true,
+                        highlight(code) {
+                            return highlight.highlightAuto(code).value;
+                        },
+                    });
+                },
+            })})
     }
 
     handleSubmit() {

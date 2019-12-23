@@ -50,7 +50,7 @@ class Layouts extends Component {
     // 1 时 = 3600秒 1分 = 60秒
     if (hasUseTime  < 60) {
       if (hasUseTime < 0) {
-        returnObj = "时间"+"0秒";
+        returnObj = "时间0秒";
       }else{
         returnObj = "时间"+parseInt(hasUseTime)+"秒";
       }
