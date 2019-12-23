@@ -15,7 +15,6 @@ import {
   getDocumentHeight,
   getWindowHeight,
   getQueryStringByName,
-  timestampToTime,
   formatDate,
 } from '../../utils/utils';
 /*actions*/

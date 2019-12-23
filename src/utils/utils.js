@@ -131,7 +131,7 @@ export function formatDate(date) {
 
   console.log(dateNew2);
  // return dateNew;
- var date = new Date(dateNew2);
+  date = new Date(dateNew2);
   var year = date.getFullYear();
   var month = date.getMonth() + 1;
   var day = date.getDate();
