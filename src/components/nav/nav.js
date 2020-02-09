@@ -100,7 +100,7 @@ class Nav extends Component {
     if (name === '/') {
       key = '9';
       navTitle = '首页';
-    } else if (name === '/articles') {
+    } else if (name === '/articles' || name==='/articleDetail') {
       key = '1';
       navTitle = '文章';
     }else if (name === '/hot') {
